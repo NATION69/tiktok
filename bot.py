@@ -5,8 +5,7 @@ import time
 from user_agent import generate_user_agent
 import requests
 import telebot
-
-from telebot import types
+import types
 import pathlib
 from datetime import datetime
 
@@ -16,15 +15,14 @@ from datetime import datetime
 s = requests.session()
 print('BOT IS RUNNING >>>>>>>>>')
 RunPosts = True
+  
 token = "1821639951:AAEvZP_JjlCS6UTMeL0MrgNdo7nKBq754fw"
 sudo = "1782851959"
-bot = telebot.TeleBot(token)
-markup_stop = types.InlineKeyboardMarkup()
-stop = types.InlineKeyboardButton(text='Stop', callback_data='stop')
-markup_stop.add(stop)
+bot = telebot.TeleBot("1821639951:AAEvZP_JjlCS6UTMeL0MrgNdo7nKBq754fw")
+
 time_sleep = "3"
 
-requests.get(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={sudo}&text=𝗕𝗼𝘁 𝗵𝗮𝘀 𝗯𝗲𝗲𝗻 𝘀𝘁𝗮𝗿𝘁𝗲𝗱 ▶ \n\n 𝗖𝗹𝗶𝗰𝗸 /start  𝗧𝗼 𝘀𝘁𝗮𝗿𝘁 𝗯𝗼𝘁 (:')
+requests.get(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={sudo}&text=𝗕𝗼𝘁 𝗵𝗮𝘀 𝗯𝗲𝗲𝗻 𝘀𝘁𝗮𝗿𝘁𝗲𝗱 ▶ \n\n 𝗖𝗹𝗶𝗰𝗸 /fuuuck  𝗧𝗼 𝘀𝘁𝗮𝗿𝘁 𝗯𝗼𝘁 (:')
 
 
 @bot.message_handler(commands=['start'])
