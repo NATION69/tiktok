@@ -1,3 +1,3 @@
-token = '1745110782:AAHW1GH4k-NkV04eSvi_EuNo_MgEu0JJco4' # توكن البوت
-sudo = 1683102194 # ايديك
+token = '1821639951:AAEvZP_JjlCS6UTMeL0MrgNdo7nKBq754fw' # توكن البوت
+sudo = 1782851959 # ايديك
 time = 3 # السلسيب
