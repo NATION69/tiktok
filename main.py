@@ -1,337 +1,84 @@
-import os
-import random
-import time
+# Programming By : RUKS and Ibrahem_Alkabby
+# tele : @Ibrahem_Alkabby and @ruks3
+#ruks3 =  Instagram: _v_go
+#Ibrahem = insragram: 6e.2k
+# Telegram : @DIBIBl
+# Telegram2 : @TDTDI                   # YouTube : https://youtube.com/channel/UCUNbzQRjfAXGCKI1LY72DTA       # automatic reaction tool              # TOOL = FREE                         
+"""
+عزيزي اذا تغير حقوق تثبت انك فاشل ..لا تغير حقوق ..اذا تغير حقوق حتصير مطي ومتصير مطور ماشي !
 
-from user_agent import generate_user_agent
+"""
+from secrets import choice
+from typing import Text
 import requests
 import telebot
-import types
-import pathlib
-from datetime import datetime
-
-from telegram import message_handler
-
-# Developer :- Telegram : MoamalHussin , Telegram Channel : Moamx_Code , Instagram : Moresxx
-
-
-s = requests.session()
-print('BOT IS RUNNING >>>>>>>>>')
-RunPosts = True
-  
-token = "1821639951:AAEvZP_JjlCS6UTMeL0MrgNdo7nKBq754fw"
-sudo = "1782851959"
-bot = telebot.TeleBot(token)
-
-time_sleep = "3"
-
-requests.get(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={sudo}&text=𝗕𝗼𝘁 𝗵𝗮𝘀 𝗯𝗲𝗲𝗻 𝘀𝘁𝗮𝗿𝘁𝗲𝗱 ▶ \n\n 𝗖𝗹𝗶𝗰𝗸 /start  𝗧𝗼 𝘀𝘁𝗮𝗿𝘁 𝗯𝗼𝘁 (:')
-
-
+import random
+from telebot import types
+from user_agent import generate_user_agent
+token = ''
+headers = {
+    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+    'accept-encoding': 'gzip, deflate, br',
+    'accept-language': 'ar,en;q=0.9,en-GB;q=0.8,en-US;q=0.7',
+    'cache-control': 'max-age=0',
+    'content-length': '132',
+    'content-type': 'application/x-www-form-urlencoded',
+    'cookie': 'FreeWHA-persistent=checked; FreeWHA-ID=ablys.ueuo.com; __gads=ID=c2bd83da020e5a31-22d771956bca00f4:T=1630487997:RT=1630487997:S=ALNI_MZnK7R6W9GucfOvMMG2id6FBpNZHw; FreeWHAreg=create',
+    'origin': 'https://newserv.freewha.com',
+    'referer': 'https://newserv.freewha.com/cgi-bin/create_ini.cgi',
+    'sec-ch-ua': '"Chromium";v="92", " Not A;Brand";v="99", "Microsoft Edge";v="92"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-fetch-dest': 'document',
+    'sec-fetch-mode': 'navigate',
+    'sec-fetch-site': 'same-origin',
+    'sec-fetch-user': '?1',
+    'upgrade-insecure-requests': '1',
+    'user-agent': generate_user_agent()
+}
+# Programming By : RUKS and Brahim
+char = "zxcvbnmasdfghjklqwertyuiop"
+rand = str(''.join(random.choice(char)for i in range(9)))
+bot = telebot.TeleBot('1769244432:AAEf4A6LhpBUPdOOmgADhK0kzunGwLnGyMQ')
 @bot.message_handler(commands=['start'])
-def start(message):
-    list = open('done.txt', 'r')
-    li = len(list.readlines())
-    idd = message.from_user.id
-    markup_inline = types.InlineKeyboardMarkup()
-    start = types.InlineKeyboardButton(text='Start Check ▶', callback_data='start')
-    make = types.InlineKeyboardButton(text='Make List 📜', callback_data='make')
-    delete = types.InlineKeyboardButton(text='Delete List 🗑', callback_data='delete')
-    file = types.InlineKeyboardButton(text='Send List 📁', callback_data='file')
-    donefilee = types.InlineKeyboardButton(text='Send Done Users ✅', callback_data='done')
-    deletedone = types.InlineKeyboardButton(text='Delete Done Users 🗑', callback_data='deletedone')
-    sid = types.InlineKeyboardButton(text='Set Session 🆔', callback_data='sid')
-    emt = types.InlineKeyboardButton(text='', callback_data='emt')
-    markup_inline.row_width = 2
-    markup_inline.add(start, make, file, delete, donefilee, deletedone, sid, emt)
-    if idd == sudo or idd == 1300329679:
-        if li == 0:
-            bot.send_message(message.chat.id, text='𝗧𝗜𝗞𝗧𝗢𝗞 𝗖𝗛𝗘𝗖𝗞𝗘𝗥 🤍\n\n'
-                                                   f'[✅] 𝗗𝗼𝗻𝗲 𝗨𝘀𝗲𝗿𝘀 : 0\n\n'
-                                                   f'Ξ 𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿 : @Moamx_Code\n\n',
-                             reply_markup=markup_inline)
-        else:
-            bot.send_message(message.chat.id, text='𝗧𝗜𝗞𝗧𝗢𝗞 𝗖𝗛𝗘𝗖𝗞𝗘𝗥 🤍\n\n'
-                                                   f'[✅] 𝗗𝗼𝗻𝗲 𝗨𝘀𝗲𝗿𝘀 : {li}\n\n'
-                                                   f'Ξ 𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿 : @Moamx_Code\n\n',
-                             reply_markup=markup_inline)
-
-
+def send_wel(message):
+    inline = types.InlineKeyboardMarkup(row_width=3)
+# Programming By : RUKS and Brahim
+    start = types.InlineKeyboardButton("اضغط لصنع الاستضافه",callback_data='start')
+    inline.add(start)
+    bot.send_message(chat_id=(message.chat.id),text="مرحبا بك في بوت صنع الاستضافة",reply_markup=inline)
 @bot.callback_query_handler(func=lambda call: True)
-def answer(call):
-    global RunPosts
-    if call.data == 'make':
-        sent = bot.send_message(call.message.chat.id, text='🔢 𝗔𝗠𝗢𝗨𝗡𝗧 :')
-        bot.register_next_step_handler(sent, length)
+def make(call):
     if call.data == 'start':
-        check(call.message)
-    if call.data == 'stop':
-        RunPosts = False
-    elif call.data == 'delete':
-        delete(call.message)
-
-    elif call.data == 'file':
-        files(call.message)
-    elif call.data == 'done':
-        done(call.message)
-    elif call.data == 'sid':
-        sent = bot.send_message(call.message.chat.id, text='🆔 𝗦𝗲𝗻𝗱 𝗦𝗲𝘀𝘀𝗶𝗼𝗻 :')
-        bot.register_next_step_handler(sent, sidinput)
-    elif call.data == 'deletedone':
-        deletedone(call.message)
-def sidinput(message):
-    sid = message.text
-    url = f'https://www.tiktok.com/api/uniqueid/check/?region=SA&aid=1233&unique_id=s2kk&app_language=en'
-    headers = {
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-        "User-Agent": generate_user_agent(),
-        "Connection": "Keep-Alive",
-        "Host": "www.tiktok.com",
-        "Accept-Encoding": "gzip, deflate",
-        "Cache-Control": "max-age=0"}
-    data = ""
-    cookies = {'sessionid': sid}
-    res = s.get(url, data=data, headers=headers, cookies=cookies)
-    markup_inline = types.InlineKeyboardMarkup()
-    markup_inlinee = types.InlineKeyboardMarkup()
-    start = types.InlineKeyboardButton(text='Start Check ▶', callback_data='start')
-    sidd = types.InlineKeyboardButton(text='Set Session 🆔', callback_data='sid')
-    markup_inlinee.row_width = 2
-    markup_inline.row_width = 2
-    markup_inline.add(start)
-    markup_inlinee.add(sidd)
-    if 'This username isn’t available.' in res.text or '"is_valid":false' in res.text or '"is_valid":true' in res.text or '"status_msg":""' in res.text:
-        sidf = open("sessionid.txt", "w")
-        sidf.write(sid)
-        sidf.close()
-        bot.send_message(message.chat.id, text='𝗗𝗼𝗻𝗲 𝘀𝗶𝗿 𝘆𝗼𝘂 𝗰𝗮𝗻 𝘀𝘁𝗮𝗿𝘁 𝗰𝗵𝗲𝗰𝗸 [✅] ',
-                         reply_markup=markup_inline)
-    elif '{}' in res.text:
-        bot.send_message(message.chat.id,
-                         text='[🛑] 𝗬𝗼𝘂𝗿 𝘀𝗲𝘀𝘀𝗶𝗼𝗻 𝗜𝗗 𝗵𝗮𝘀 𝗯𝗲𝗲𝗻 𝗯𝗮𝗻𝗻𝗲𝗱',
-                         reply_markup=markup_inlinee)
-
-    elif 'Login expired' in res.text:
-        bot.send_message(message.chat.id,
-                         text='[⚠] 𝗬𝗼𝘂𝗿 𝘀𝗲𝘀𝘀𝗶𝗼𝗻 𝗜𝗗 𝗵𝗮𝘀 𝗯𝗲𝗲𝗻 𝗲𝘅𝗽𝗶𝗿𝗲𝗱 ',
-                         reply_markup=markup_inline)
-
-
-def check(message):
-    listt = open('list.txt', 'r')
-    liii = len(listt.readlines())
-    listt.close()
-    cid = message.chat.id
-    mid = message.message_id
-    markup_inline = types.InlineKeyboardMarkup()
-    sid = types.InlineKeyboardButton(text='Set Session 🆔', callback_data='sid')
-    global RunPosts
-    RunPosts = True
-    markup_inline.add(sid)
-    d = 0
-    b = 0
-    er = 0
-    rem = liii
-    sidread = open('sessionid.txt', 'r').read()
-    sessioniddd = sidread
-    if os.path.exists("sessionid.txt"):
-        sessionidd = open('sessionid.txt', 'r')
-        lis = len(sessionidd.readlines())
-        sessionidd.close()
-        if lis == 0:
-            bot.send_message(message.chat.id, text='[⚠] 𝗬𝗼𝘂 𝗺𝘂𝘀𝘁 𝗮𝗱𝗱 ( 𝗦𝗲𝘀𝘀𝗶𝗼𝗻 𝗜𝗗 ) 𝗳𝗶𝗿𝘀𝘁')
-        else:
-            if os.path.exists("list.txt"):
-                list = open('list.txt', 'r')
-                li = len(list.readlines())
-                user = open('list.txt').read().splitlines()
-                list.close()
-                rem = li
-                if li == 0:
-                    bot.send_message(message.chat.id, text='Ξ 𝗬𝗼𝘂 𝘀𝗵𝗼𝘂𝗹𝗱 𝗺𝗮𝗸𝗲 𝗹𝗶𝘀𝘁 𝗳𝗶𝗿𝘀𝘁 📜')
-                else:
-                    while RunPosts == True:
-                        for checkusers in user:
-                            nowtime = datetime.now()
-                            current_time = nowtime.strftime("%H:%M:%S")
-                            if rem == 0:
-                                bot.send_message(message.chat.id, text='𝗜 𝗰𝗵𝗲𝗰𝗸 𝗮𝗹𝗹 𝘂𝘀𝗲𝗿𝘀 𝘀𝗶𝗿 ✅!')
-                                s.cookies.clear()
-                                s.close()
-                                RunPosts = False
-                            if not RunPosts:
-                                bot.send_message(message.chat.id, text='𝗜 𝗔𝗠 𝗦𝗧𝗢𝗣 ⏸')
-                                s.cookies.clear()
-                                s.close()
-                                break
-                            url = f'https://www.tiktok.com/api/uniqueid/check/?region=SA&aid=1233&unique_id=' + checkusers + '&app_language=en'
-                            headers = {
-                                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-                                "User-Agent": generate_user_agent(),
-                                "Connection": "Keep-Alive",
-                                "Host": "www.tiktok.com",
-                                "Accept-Encoding": "gzip, deflate",
-                                "Cache-Control": "max-age=0"}
-                            data = ""
-                            cookies = {'sessionid': sessioniddd}
-                            res = s.get(url, data=data, headers=headers, cookies=cookies)
-                            if 'This username isn’t available.' in res.text or '"is_valid":false' in res.text or '"is_valid":true' in res.text:
-                                if os.path.exists('sessionid.txt'):
-                                    if '"status_msg":""' in res.text and '"is_valid":true' in res.text and RunPosts == True:
-                                        with open('done.txt', 'a') as x:
-                                            x.write(checkusers + '\n')
-                                        time.sleep(time_sleep)
-                                        rem -= 1
-                                        d += 1
-                                        bot.edit_message_text(chat_id=cid, text='𝗖𝗛𝗘𝗖𝗞𝗜𝗡𝗚 𝗦𝗧𝗔𝗥𝗧𝗘𝗗 ▶\n\n'
-                                                                                f'[🆔] : {sidread}\n\n'
-                                                                                f'Ξ 𝗨𝘀𝗲𝗿𝗻𝗮𝗺𝗲 𝗖𝗼𝘂𝗻𝘁 : {li}\n\n'
-                                                                                f'Ξ 𝗜𝗻 𝗨𝘀𝗲𝗿 : {checkusers}\n\n'
-                                                                                f'[✅] 𝗗𝗼𝗻𝗲 𝗨𝘀𝗲𝗿𝘀 : {d}\n\n'
-                                                                                f'[❌] 𝗕𝗮𝗱 𝗨𝘀𝗲𝗿𝘀 :   {b}\n\n'
-                                                                                f'[⚠] 𝗘𝗿𝗿𝗼𝗿 𝗨𝘀𝗲𝗿𝘀 :   {er}\n\n'
-                                                              , message_id=mid,
-                                                              reply_markup=markup_stop)
-                                        bot.send_message(message.chat.id,
-                                                         text='𝗜 𝗙𝗨𝗖𝗞 𝗡𝗘𝗪 𝗨𝗦𝗘𝗥 𝗦𝗜𝗥 [✅]\n\n'
-                                                              f'Ξ 𝗨𝘀𝗲𝗿𝗻𝗮𝗺𝗲 : {checkusers}\n\n'
-                                                              f'Ξ 𝗧𝗶𝗺𝗲 {current_time}')
-
-                                    elif '"is_valid":false' in res.text or '' in res.text and RunPosts == True:
-                                        time.sleep(time_sleep)
-                                        b += 1
-                                        rem -= 1
-                                        bot.edit_message_text(chat_id=cid, text='𝗖𝗛𝗘𝗖𝗞𝗜𝗡𝗚 𝗦𝗧𝗔𝗥𝗧𝗘𝗗 ▶\n\n'
-                                                                                f'🆔 : {sidread}\n\n'
-                                                                                f'Ξ 𝗨𝘀𝗲𝗿𝗻𝗮𝗺𝗲 𝗖𝗼𝘂𝗻𝘁 : {li}\n\n'
-                                                                                f'Ξ 𝗜𝗻 𝗨𝘀𝗲𝗿 : {checkusers}\n\n'
-                                                                                f'[✅] 𝗗𝗼𝗻𝗲 𝗨𝘀𝗲𝗿𝘀 : {d}\n\n'
-                                                                                f'[❌] 𝗕𝗮𝗱 𝗨𝘀𝗲𝗿𝘀 :   {b}\n\n'
-                                                                                f'[⚠] 𝗘𝗿𝗿𝗼𝗿 𝗨𝘀𝗲𝗿𝘀 :   {er}\n\n'
-                                                              , message_id=mid,
-                                                              reply_markup=markup_stop)
-                                    else:
-                                        time.sleep(time_sleep)
-                                        bot.send_message(message.chat.id, text=res.text)
-                                        rem -= 1
-                                        er += 1
-                                        bot.edit_message_text(chat_id=cid, text='𝗖𝗛𝗘𝗖𝗞𝗜𝗡𝗚 𝗦𝗧𝗔𝗥𝗧𝗘𝗗 ▶\n\n'
-                                                                                f'🆔 : {sidread}\n\n'
-                                                                                f'Ξ 𝗨𝘀𝗲𝗿𝗻𝗮𝗺𝗲 𝗖𝗼𝘂𝗻𝘁 : {li}\n\n'
-                                                                                f'Ξ 𝗜𝗻 𝗨𝘀𝗲𝗿 : {checkusers}\n\n'
-                                                                                f'[✅] 𝗗𝗼𝗻𝗲 𝗨𝘀𝗲𝗿𝘀 : {d}\n\n'
-                                                                                f'[❌] 𝗕𝗮𝗱 𝗨𝘀𝗲𝗿𝘀 :   {b}\n\n'
-                                                                                f'[⚠] 𝗘𝗿𝗿𝗼𝗿 𝗨𝘀𝗲𝗿𝘀 :   {er}\n\n'
-                                                              , message_id=mid,
-                                                              reply_markup=markup_stop)
-
-                                else:
-                                    bot.send_message(message.chat.id, text='Call @MoamalHussin')
-                                    break
-                            elif 'Login expired' in res.text:
-                                bot.send_message(message.chat.id,
-                                                 text='[⚠] 𝗬𝗼𝘂𝗿 𝘀𝗲𝘀𝘀𝗶𝗼𝗻 𝗜𝗗 𝗵𝗮𝘀 𝗯𝗲𝗲𝗻 𝗲𝘅𝗽𝗶𝗿𝗲𝗱',
-                                                 reply_markup=markup_inline)
-                                requests.session().close()
-                                s.cookies.clear()
-                                s.close()
-                                RunPosts = False
-                                break
-                            elif '{}' in res.text:
-                                bot.send_message(message.chat.id,
-                                                 text='[🛑] 𝗬𝗼𝘂𝗿 𝘀𝗲𝘀𝘀𝗶𝗼𝗻 𝗜𝗗 𝗵𝗮𝘀 𝗯𝗲𝗲𝗻 𝗯𝗮𝗻𝗻𝗲𝗱',
-                                                 reply_markup=markup_inline)
-                                requests.session().close()
-                                s.cookies.clear()
-                                s.close()
-                                RunPosts = False
-                                break
-                            else:
-                                print(res.text)
-            elif liii == 0:
-                bot.send_message(message.chat.id, text='𝗬𝗢𝗨 𝗦𝗛𝗢𝗨𝗟𝗗 𝗠𝗔𝗞𝗘 𝗟𝗜𝗦𝗧 𝗙𝗜𝗥𝗦𝗧 📜')
-
-            else:
-                bot.send_message(message.chat.id, text='𝗬𝗢𝗨 𝗦𝗛𝗢𝗨𝗟𝗗 𝗠𝗔𝗞𝗘 𝗟𝗜𝗦𝗧 𝗙𝗜𝗥𝗦𝗧 📜')
-
-
-def length(message):
-    amount = message.text
-    length = bot.send_message(message.chat.id, text='🔢 𝗟𝗘𝗡𝗚𝗧𝗛 :')
-    bot.register_next_step_handler(length, make, amount)
-
-
-def files(message):
-    file = pathlib.Path("list.txt")
-    if file.exists():
-        send = open('list.txt', 'rb')
-        bot.send_document(message.chat.id, send)
-    else:
-        bot.send_message(message.chat.id, text='𝗙𝗜𝗟𝗘 𝗡𝗢𝗧 𝗙𝗢𝗨𝗡𝗗 ❌')
-
-
-def done(message):
-    file = pathlib.Path("done.txt")
-    if file.exists():
-        list = open('done.txt', 'r')
-        li = len(list.readlines())
-        if li == 0:
-            bot.send_message(message.chat.id, text='𝗙𝗜𝗟𝗘, 𝗜𝗦 𝗘𝗠𝗣𝗧𝗬 𝗦𝗜𝗥 📂')
-        else:
-            send = open('done.txt', 'rb')
-            bot.send_document(message.chat.id, send)
-    else:
-        bot.send_message(message.chat.id, text='𝗙𝗜𝗟𝗘 𝗡𝗢𝗧 𝗙𝗢𝗨𝗡𝗗 ❌')
-
-
-def make(message, amount):
-    markup_inline = types.InlineKeyboardMarkup()
-    startt = types.InlineKeyboardButton(text='Start Check ▶', callback_data='start')
-    markup_inline.row_width = 2
-    markup_inline.add(startt)
-    length = message.text
-    amount = int(amount)
-    length = int(length)
-    if os.path.exists("list.txt"):
-        bot.send_message(message.chat.id, text='𝗧𝗵𝗲 𝗳𝗶𝗹𝗲 𝗮𝗹𝗿𝗲𝗮𝗱𝘆 𝗲𝘅𝗶𝘀𝘁 𝘆𝗼𝘂 𝗺𝘂𝘀𝘁\n'
-                                               '𝗗𝗲𝗹𝗲𝘁𝗲 𝗶𝘁 𝗮𝗻𝗱 𝗺𝗮𝗸𝗲 𝗻𝗲𝘄 𝗼𝗻𝗲')
-    else:
-        bot.send_message(message.chat.id, text='⏳ 𝗣𝗹𝗲𝗮𝘀𝗲 𝗪𝗮𝗶𝘁 >>>>')
-        chars = 'abcdefghijklmnopqrstuvwxyz1234567890_'
-        for user in range(amount):
-            user = ''
-            for item in range(length):
-                user += random.choice(chars)
-            with open('list.txt', 'a') as xx:
-                xx.write(user + '\n')
-
-        bot.send_message(message.chat.id, text='𝗜 𝗔𝗠 𝗗𝗢𝗡𝗘 𝗦𝗜𝗥 ✅', reply_markup=markup_inline)
-
-
-def deletedone(message):
-    if os.path.exists("done.txt"):
-        sidf = open("done.txt", "w")
-        sidf.write('')
-        bot.send_message(message.chat.id, text='𝗙𝗜𝗟𝗘 𝗛𝗔𝗦 𝗕𝗘𝗘𝗡 𝗗𝗘𝗟𝗘𝗧𝗘𝗗 ✅')
-    else:
-        bot.send_message(message.chat.id, text='🛑 𝗦𝗢𝗥𝗥𝗬, 𝗕𝗨𝗧 𝗧𝗛𝗘 𝗙𝗜𝗟𝗘 𝗗𝗘𝗟𝗘𝗧𝗘𝗗 𝗔𝗟𝗥𝗘𝗔𝗗𝗬',
-                         parse_mode='markdown')
-
-
-def delete(message):
-    markup_inline = types.InlineKeyboardMarkup()
-    makee = types.InlineKeyboardButton(text='Make List 📜', callback_data='make')
-    markup_inline.row_width = 2
-    markup_inline.add(makee)
-    if os.path.exists("list.txt"):
-        os.remove("list.txt")
-        bot.send_message(message.chat.id, text='𝗙𝗜𝗟𝗘 𝗛𝗔𝗦 𝗕𝗘𝗘𝗡 𝗗𝗘𝗟𝗘𝗧𝗘𝗗 ✅',
-                         reply_markup=markup_inline)
-    else:
-        bot.send_message(message.chat.id, text='🛑 𝗦𝗢𝗥𝗥𝗬, 𝗕𝗨𝗧 𝗧𝗛𝗘 𝗙𝗜𝗟𝗘 𝗗𝗘𝗟𝗘𝗧𝗘𝗗 𝗔𝗟𝗥𝗘𝗔𝗗𝗬')
-
-
-while True:
-    try:
-        bot.polling(none_stop=True)
-    except Exception as ex:
-        telebot.logger.error(ex)
+        bot.edit_message_text(chat_id=(call.message.chat.id),message_id=(call.message.id),text='الان قم برسال اسم الاستضافة')
+        @bot.message_handler(func=(lambda message: True))
+        def send_message(message):
+            
+            if message.text:
+                M=str(''.join(random.choice(char)for i in range(3)))
+                print(M)
+                data = {
+                    'action': 'validate',
+                    'domainName': '{}.orgfree.com'.format(message.text),
+                    'email': '{}@gmail.com'.format(rand),
+                    'password': 'ibrahem5ruks5{}'.format(M),
+                    'confirmPassword': 'ibrahem5ruks5{}'.format(M),
+                    'agree': '1'
+                } 
+                url = 'https://newserv.freewha.com/cgi-bin/create_ini.cgi'
+                req = requests.post(url,headers=headers,data=data).text           # Programming By : RUKS and Brahim
+                true = 'Create your account at Free Web Hosting Area'
+                false = 'This account already exists!'
+# Programming By : RUKS and Brahim    
+                if true in req:       
+                 bot.send_message((message.chat.id),text=f"""⌯  ʏᴏụʀ ʜᴏѕᴛɪɴɢ ɪɴғᴏʀᴍᴀᴛɪᴏɴ  ⌯
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⌯ ᴜѕᴇʀɴᴀᴍᴇ : {message.text}.orgfree.com
+⌯ ᴘᴀѕѕᴡᴏʀᴅ : ibrahem5ruks5{M}
+⌯ ᴡᴇʙѕɪᴛᴇ : {message.text}.orgfree.com
+⌯ ᴘᴀɴᴇʟ : https://newserv.freewha.com
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+• Tele : @DIBIBl . @TDTDI. ؟ ، 🔥""")
+                elif false in req:
+                    bot.send_message(chat_id=(call.message.chat.id),text="غير متاح")
+# Programming By : RUKS and Brahim
+bot.polling()
